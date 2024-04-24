@@ -4,6 +4,8 @@
 - Minimum Requirements -- First priority
   - Implemented using HTML/CSS/Javascript
   - Works for 3 main modern browsers on current version -- Chrome, Firefox, Safari
+    - Product intended to supplement work log for developers: fair assumption that up-to-date technology is available
+    - Assume a code-first approach under these conditions
   - Main Calendar on left side of screen
     - Displays current month, with clickable days
     - The current month should be automatically displayed, with dates filled in correctly to baxes of the calendar
