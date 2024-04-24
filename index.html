@@ -2,44 +2,18 @@
 <html>
 <head>
   <link rel="stylesheet" href="index.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <main>
-  <script>
-      window.addEventListener('load', () => {
-      const container = document.querySelector('#calendar_days');
-      const create_row = (days, sel) => {
-        const ele = document.createElement('div');
-        ele.classList.add('calendar_row');
-        days.forEach((txt) => {
-          const day = document.createElement('div');
-          if (txt === sel) {
-            day.classList.add('calendar_selected');
-          }
-          day.textContent = txt;
-          ele.appendChild(day);
-        });
-        return ele;
-      };
-      let days = ['31'];
-      for (let i = 1; i <= 30; i++){
-        days.push(i.toString());
-      }
-      for (let i = 1; i <= 4; i++){
-        days.push(i.toString());
-      }
-      for (let i = 0; i < days.length; i += 7) {
-        container.appendChild(create_row(days.slice(i,i+7), '23'));
-      }
-    });
-  </script>
+
   <div class="container">
     <div class="calendar">
       <div class="heading">
         <div class="heading_bar">
         </div>
         <div class="heading_content">
-          <div class="heading_title">
+          <div class="heading_title"  id="cur_month">
             April, 2024
           </div>
           <div class="heading_comp">
