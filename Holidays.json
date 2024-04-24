@@ -6,26 +6,15 @@
  "4.9": ["National Library Workers' Day"],
  "4.10": ["Eid al-Fitr"],
  "4.13": ["Thomas Jefferson's Birthday"],
- "4.15": ["Tax Day"],
-}
-          <!-- 4.15 Tax Day-->
-          <!-- 4.15 Father Damien Day-->
-          <!-- 4.15 Patriots' Day-->
-          <!-- 4.15 Boston Marathon-->
-          <!-- 4.16 Emancipation Day-->
-          <!-- 4.19 Arbor Day-->
-          <!-- 4.21 San Jacinto Day-->
-          <!-- 4.22 Passover Eve-->
-          <!-- 4.22 Oklahoma Day-->
-          <!-- 4.22 Confederate Memorial Day-->
-          <!-- 4.23 Passover (first day)-->
-          <!-- 4.24 Administrative Professionals Day-->
-          <!-- 4.25 Take our Daughters and Sons to Work Day-->
-          <!-- 4.26 Arbor Day-->
-          <!-- 4.26 Confederate Memorial Day-->
-          <!-- 4.26 State Holiday-->
-          <!-- 4.29 Arbor Day-->
-          <!-- 4.29 Confederate Memorial Day-->
-          <!-- 4.30 Last Day of Passover-->
-}
+ "4.15": ["Tax Day", "Father Damien Day", "Patriots' Day", "Boston Marathon"],
+ "4.16": ["Emancipation Day"],
+ "4.19": ["Arbor Day"],
+ "4.21": ["San Jacinto Day"], 
+ "4.22": ["Passover Eve", "Oklahoma Day", "Confederate Memorial Day"],
+ "4.23": ["Passover (first day)"], 
+ "4.24": ["Administrative Professionals Day"],
+ "4.25": ["Take our Daughters and Sons to Work Day"],
+ "4.26": ["Confederate Memorial Day", "State Holiday"],
+ "4.29": ["Arbor Day"],
+ "4.30": ["Last Day of Passover"]
 }
