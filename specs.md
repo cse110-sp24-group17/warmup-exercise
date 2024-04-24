@@ -11,7 +11,9 @@
     - Functionality on click can be easily built onto in the future, functionality itself might be implemented later (see below)
   - Daily status skeleton on right side of screen
     - Will not necessarily update alongside button clicks in minimum first completion -- functionality to be updated if time allows (see below)
-    - Date
+    - Date + Day of week
+    - Holidays
+    - Daily Quote
 
 - Additional Features -- Second priority
   - Reactive daily status - make displayed daily status non-static, and correspond correctly to selected day
