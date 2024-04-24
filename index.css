@@ -1,0 +1,218 @@
+body {
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex; 
+  margin-top: 40px;
+  width: 800px;
+  gap: 20px;
+}
+
+.calendar {
+  flex: 1;
+}
+
+.editor {
+  flex: 1;
+}
+
+.heading_bar {
+  background: orange;
+  width: 4px;
+  margin-right: 8px;
+}
+
+.weather {
+  width: 40px;
+  height: 30px;
+  margin-left: 35px;
+}
+
+.weather img {
+  max-width: 100%;
+  height: 30px;
+}
+
+.add_button {
+  font-weight: 900;
+}
+
+.heading {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+.heading_title {
+  
+}
+
+.heading_content {
+  display: flex;
+  flex: 1;
+  padding: 5px 0;
+}
+
+.heading_comp {
+  display: flex;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.calendar_buttons {
+  display: flex;
+  margin-left: auto;
+  height: 35px;
+  margin-right: 20px
+}
+
+.calendar_content {
+  padding-right: 20px;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.calendar_weekday {
+  display: flex;
+  justify-content: space-between;
+}
+.calendar_weekday div {
+  text-align: center;
+  padding: 10px;
+  width: 40px;
+}
+
+.calendar_buttons img {
+  max-width: 100%;
+  height: 35px;
+}
+
+.calendar_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar_row div {
+  user-select: none;
+  cursor: pointer;
+  width: 40px;
+  padding: 10px 5px;
+  margin: 3px 4px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.calendar_row div:hover {
+  background: lightgray;
+  transition: 0.2s;
+}
+
+.calendar_selected {
+  background: #FFD580;
+}
+
+
+.add_button {
+  margin-left: auto;
+  margin-right: -10px;
+  position:relative;
+}
+
+.event {
+  border: solid orange;
+  padding: 10px 10px;
+  border-width: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.event_title {
+  font-size: 1.1rem;
+  font-weight: 200;
+  margin-bottom: 4px;
+}
+
+.event_place {
+  color: orange;
+  font-weight: 500;
+}
+
+.nobold {
+  font-weight: 100;
+}
+
+.event_time {
+  font-weight: 600;
+}
+
+.dailylog {
+  padding-left: 20px;
+  font-weight: 100;
+  font-size: 1.05rem;
+}
+
+.dailylog li {
+  margin-bottom: 5px;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+}
+
+ul li:before {
+   content: "\25cf";
+   font-size: 0.5rem;
+   padding-right: 10px;
+}
+
+.button_plus {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  background: #FFD580;
+  cursor: pointer;
+  right: 50%;
+}
+
+.button_plus:after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 3px;
+  width: 70%;
+  background: orange;
+  top: 50%;
+  left: 50%;
+}
+
+.button_plus:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: orange;
+  height: 70%;
+  width: 3px;
+}
+
+.button_plus:hover:before,
+.button_plus:hover:after {
+  background: #fff;
+  transition: 0.2s;
+}
+
+.button_plus:hover {
+  background-color: orange;
+  transition: 0.2s;
+}
