@@ -24,4 +24,3 @@
   - Scrolling back and forth between past/future months
   - Light/Dark Mode
   - Reactive animations (i.e. clicking a date does something to show it was clicked)
-  - Display additional information for dates, such as holidays
