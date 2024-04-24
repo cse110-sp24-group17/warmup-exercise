@@ -112,12 +112,14 @@ main {
 }
 
 .calendar_row div:hover {
-  background: lightgray;
+
+  background: #FFD580;
   transition: 0.2s;
 }
 
 .calendar_selected {
-  background: #FFD580;
+  color:  lightgray;
+  
 }
 
 
