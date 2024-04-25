@@ -2,31 +2,52 @@
 <html>
 <head>
   <link rel="stylesheet" href="index.css">
-  <script src="app.js"></script>
 </head>
 <body>
   <main>
+  <script>
+      window.addEventListener('load', () => {
+      const container = document.querySelector('#calendar_days');
+      const create_row = (days, sel) => {
+        const ele = document.createElement('div');
+        ele.classList.add('calendar_row');
+        days.forEach((txt) => {
+          const day = document.createElement('div');
+          if (txt === sel) {
+            day.classList.add('calendar_selected');
+          }
+          day.textContent = txt;
+          ele.appendChild(day);
+        });
+        return ele;
+      };
+      let days = ['31'];
+      for (let i = 1; i <= 30; i++){
+        days.push(i.toString());
+      }
+      for (let i = 1; i <= 4; i++){
+        days.push(i.toString());
+      }
+      for (let i = 0; i < days.length; i += 7) {
+        container.appendChild(create_row(days.slice(i,i+7), '23'));
+      }
+    });
 
+    
+  </script>
   <div class="container">
     <div class="calendar">
       <div class="heading">
         <div class="heading_bar">
         </div>
         <div class="heading_content">
-          <div class="heading_title"  id="cur_month">
+          <div class="heading_title">
             April, 2024
           </div>
           <div class="heading_comp">
             <div class="weather"><img src="cloud.png"></div>
             <div class="calendar_buttons">
-              <div class="prev_button" onclick="prevMonth()"><svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Polygon 4" d="M29.25 17.567C29.5833 17.7594 29.5833 18.2406 29.25 18.433L2.25 34.0215C1.91666 34.2139 1.5 33.9734 1.5 33.5885L1.5 2.41154C1.5 2.02664 1.91666 1.78608 2.25 1.97853L29.25 17.567Z" fill="#FFA800" fill-opacity="0.32" stroke="#FFA800" stroke-width="3"/>
-                </svg>
-                </div>
-              <div onclick="nextMonth()"><svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Polygon 4" d="M29.25 17.567C29.5833 17.7594 29.5833 18.2406 29.25 18.433L2.25 34.0215C1.91666 34.2139 1.5 33.9734 1.5 33.5885L1.5 2.41154C1.5 2.02664 1.91666 1.78608 2.25 1.97853L29.25 17.567Z" fill="#FFA800" fill-opacity="0.32" stroke="#FFA800" stroke-width="3"/>
-                </svg>
-                </div>
+              <img src="buttons.png">
             </div>
           </div>
         </div>
@@ -43,6 +64,7 @@
         </div>
         <div class="calendar_days" id="calendar_days"></div>
       </div>
+    <!-- start of holiday part -->
     </div>
     <div class="editor">
       <div class="heading">
@@ -50,37 +72,34 @@
         </div>
         <div class="heading_content">
           <div class="heading_title">
-            Today, 4/23/2024
+            Today, 4/1/2024
           </div>
           <div class="heading_comp">
             <div class="add_button">
               <div class="button_plus"></div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
-      <div class="event">
-      </div>
-      <div class="event">
-        
+      <div class="holidays"> 
+        <ul>
+          <li>César Chávez Day</li>
+          <li>Easter Monday</li>
+          <li>April Fools</li>
+        </ul>
       </div>
       <div class="heading">
         <div class="heading_bar">
         </div>
         <div class="heading_content">
-          <div onclick="getQuote(3)" class="heading_title" id="Quote">
-            Daily Quote
-          </div>
-          <div id="quote"></div>
-          <div class="heading_comp">
-            <div class="add_button">
-              <div class="button_plus"></div>
-            </div>
-          </div>
+          <div class="heading_title">Daily Quote</div>
+          <div class="heading_comp"></div>
         </div>
       </div>
+      <div class = "quote"><i>This will be a quote</i></div>
     </div>
   </div>
   </main>
+  <script src="index.js"></script>
 </body>
 </html>
