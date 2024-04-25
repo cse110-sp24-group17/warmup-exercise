@@ -4,7 +4,6 @@ var month =currentDate.getMonth();
 
 let year = currentDate.getFullYear();
 
-
 window.addEventListener('load', () => {
     resetMonth(month);
 });
@@ -16,7 +15,7 @@ function prevMonth() {
         month = 11
     }
     resetMonth((month%12+12)%12);
-    
+
 }
 
 function nextMonth() {
