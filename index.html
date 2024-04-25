@@ -1,13 +1,87 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar</title>
-  </head>
-  <body>
-    <script  src="app.js"></script>
-    <h1 id="1">abc</h1>
-  </body>
+<!doctype HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css">
+  <script src="app.js"></script>
+</head>
+<body>
+  <main>
+
+  <div class="container">
+    <div class="calendar">
+      <div class="heading">
+        <div class="heading_bar">
+        </div>
+        <div class="heading_content">
+          <div class="heading_title"  id="cur_month">
+            April, 2024
+          </div>
+          <div class="heading_comp">
+            <div class="weather"><img src="cloud.png"></div>
+            <div class="calendar_buttons">
+              <div class="prev_button" onclick="prevMonth()"><svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Polygon 4" d="M29.25 17.567C29.5833 17.7594 29.5833 18.2406 29.25 18.433L2.25 34.0215C1.91666 34.2139 1.5 33.9734 1.5 33.5885L1.5 2.41154C1.5 2.02664 1.91666 1.78608 2.25 1.97853L29.25 17.567Z" fill="#FFA800" fill-opacity="0.32" stroke="#FFA800" stroke-width="3"/>
+                </svg>
+                </div>
+              <div onclick="nextMonth()"><svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Polygon 4" d="M29.25 17.567C29.5833 17.7594 29.5833 18.2406 29.25 18.433L2.25 34.0215C1.91666 34.2139 1.5 33.9734 1.5 33.5885L1.5 2.41154C1.5 2.02664 1.91666 1.78608 2.25 1.97853L29.25 17.567Z" fill="#FFA800" fill-opacity="0.32" stroke="#FFA800" stroke-width="3"/>
+                </svg>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calendar_content">
+        <div class="calendar_weekday">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="calendar_days" id="calendar_days"></div>
+      </div>
+    </div>
+    <div class="editor">
+      <div class="heading">
+        <div class="heading_bar">
+        </div>
+        <div class="heading_content">
+          <div class="heading_title">
+            Today, 4/23/2024
+          </div>
+          <div class="heading_comp">
+            <div class="add_button">
+              <div class="button_plus"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+      </div>
+      <div class="event">
+        
+      </div>
+      <div class="heading">
+        <div class="heading_bar">
+        </div>
+        <div class="heading_content">
+          <div onclick="getQuote(3)" class="heading_title" id="Quote">
+            Daily Quote
+          </div>
+          <div id="quote"></div>
+          <div class="heading_comp">
+            <div class="add_button">
+              <div class="button_plus"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </main>
+</body>
 </html>
