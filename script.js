@@ -2,17 +2,28 @@
 const currentDate = new Date();
 var month =currentDate.getMonth();
 
+let year = currentDate.getFullYear();
+
 window.addEventListener('load', () => {
     resetMonth(month);
 });
 
 function prevMonth() {
     month--;
+    if(month == -1){
+        year--;
+        month = 11
+    }
     resetMonth((month%12+12)%12);
+
 }
 
 function nextMonth() {
     month++;
+    if(month == 12){
+        year++
+        month = 0
+    }
     resetMonth((month%12+12)%12);
 }
 
@@ -33,8 +44,6 @@ const create_row = (days, gray, sel) => {
 };
 
 /* Grab proper date information*/
-let year = currentDate.getFullYear();
-
 let monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -86,9 +95,4 @@ function firstDaysOfMonth(year) {
   
     return firstDays;
   }
-  
-  // Example usage:
-  const year = 2024;
-  const firstDays = firstDaysOfMonth(year);
-  console.log(firstDays);
   

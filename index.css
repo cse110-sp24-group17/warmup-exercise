@@ -121,6 +121,11 @@ main {
   
 }
 
+.prev_button {
+    transform: rotate(180deg);
+    margin-right: 20px;
+}
+
 
 .add_button {
   margin-left: auto;
