@@ -1,104 +1,14 @@
-<!doctype HTML>
-<html>
-<head>
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
-  <main>
-  <script>
-      window.addEventListener('load', () => {
-      const container = document.querySelector('#calendar_days');
-      const create_row = (days, sel) => {
-        const ele = document.createElement('div');
-        ele.classList.add('calendar_row');
-        days.forEach((txt) => {
-          const day = document.createElement('div');
-          if (txt === sel) {
-            day.classList.add('calendar_selected');
-          }
-          day.textContent = txt;
-          ele.appendChild(day);
-        });
-        return ele;
-      };
-      let days = ['31'];
-      for (let i = 1; i <= 30; i++){
-        days.push(i.toString());
-      }
-      for (let i = 1; i <= 4; i++){
-        days.push(i.toString());
-      }
-      for (let i = 0; i < days.length; i += 7) {
-        container.appendChild(create_row(days.slice(i,i+7), '23'));
-      }
-    });
-
-    
-  </script>
-  <div class="container">
-    <div class="calendar">
-      <div class="heading">
-        <div class="heading_bar">
-        </div>
-        <div class="heading_content">
-          <div class="heading_title">
-            April, 2024
-          </div>
-          <div class="heading_comp">
-            <div class="weather"><img src="cloud.png"></div>
-            <div class="calendar_buttons">
-              <img src="buttons.png">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="calendar_content">
-        <div class="calendar_weekday">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="calendar_days" id="calendar_days"></div>
-      </div>
-    <!-- start of holiday part -->
-    </div>
-    <div class="editor">
-      <div class="heading">
-        <div class="heading_bar">
-        </div>
-        <div class="heading_content">
-          <div class="heading_title">
-            Today, 4/1/2024
-          </div>
-          <div class="heading_comp">
-            <div class="add_button">
-              <div class="button_plus"></div>
-            </div>
-          </div> 
-        </div>
-      </div>
-      <div class="holidays"> 
-        <ul>
-          <li>César Chávez Day</li>
-          <li>Easter Monday</li>
-          <li>April Fools</li>
-        </ul>
-      </div>
-      <div class="heading">
-        <div class="heading_bar">
-        </div>
-        <div class="heading_content">
-          <div class="heading_title">Daily Quote</div>
-          <div class="heading_comp"></div>
-        </div>
-      </div>
-      <div class = "quote"><i>This will be a quote</i></div>
-    </div>
-  </div>
-  </main>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>med-dash-auth</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div>hi</div>
+    <script type="module" src="xapp.js"></script>
+  </body>
 </html>
