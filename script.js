@@ -1,7 +1,6 @@
 
 const currentDate = new Date();
-var month =currentDate.getMonth();
-
+var month = currentDate.getMonth();
 let year = currentDate.getFullYear();
 
 window.addEventListener('load', () => {
@@ -35,7 +34,7 @@ const create_row = (days, gray, sel) => {
   days.forEach((txt, i) => {
     const day = document.createElement('div');
     if (gray[i]) {
-      day.classList.add('calendar_selected');
+      day.classList.add('calendar_grayed');
     }
     day.textContent = txt;
     ele.appendChild(day);
@@ -48,16 +47,33 @@ let monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
+  
 const curMonthEle = document.querySelector('#cur_month');
 curMonthEle.textContent = monthNames[month] + ", " + year
 
 /*Init day arrays */
 let days = new Array(35).fill(0);
+let dates = new Array(35).fill(0);
 let gray = new Array(35).fill(0);
 
 /*Gather week info from functions */
 let tuples = firstDaysOfMonth(year)
 let firstDay = tuples[month].dayOfWeek
+
+const daysInMonths = [
+    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+  ];
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+
+function getDaysOfMonth(year, month) {
+    if (isLeapYear(year) && month == 1) {
+        return 29;
+    }
+    return daysInMonths[month];
+}
 
 /* Update current month*/
 let counter = 1
@@ -66,12 +82,12 @@ for(let i=firstDay; i<days.length; i++) {
     days[i] = counter++
     if (cc)
         gray[i] = 1
-    if(counter > 30){
+    if(counter > getDaysOfMonth(year,month)){
         counter = 1
         cc = 1
     }
 }
-let count = 31
+let count = getDaysOfMonth(year, (month-1+12)%12);
 for(let i=firstDay-1; i>=0; i--){
     days[i] = count--
     gray[i] = 1

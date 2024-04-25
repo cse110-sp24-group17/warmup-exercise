@@ -116,9 +116,13 @@ main {
   transition: 0.2s;
 }
 
-.calendar_selected {
-  color:  lightgray;
-  
+
+.calendar_grayed {
+    color:  lightgray; 
+  }
+
+.calendar_today {
+  border: solid orange; 
 }
 
 .prev_button {
