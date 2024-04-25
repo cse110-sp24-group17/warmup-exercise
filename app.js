@@ -1,10 +1,15 @@
-import {Holidays} from "Holidays.json"
-import {Quotes} from "dailyquotes.json"
+document.body.innerHTML = "<h1>nbsdkjfkjs</h1>"
 
-function App() {
-    return(
-       <div>Hi</div>
-    )
+//export default function getQuote(day) {
+//    return (
+//        <>help me please</>
+//    )
+//}
+
+var head1 = document.getElementById("1");
+head1.addEventListener(changeText);
+
+
+function changeText() {
+    document.getElementById("1").style.color = "red";
 }
-
-export default App;
