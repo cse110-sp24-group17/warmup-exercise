@@ -112,7 +112,6 @@ main {
 }
 
 .calendar_row div:hover {
-
   background: #FFD580;
   transition: 0.2s;
 }
