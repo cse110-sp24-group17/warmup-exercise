@@ -2,6 +2,7 @@
 const currentDate = new Date();
 var month = currentDate.getMonth();
 let year = currentDate.getFullYear();
+let selectedDay = null;
 
 window.addEventListener('load', () => {
     resetMonth(month);
@@ -13,6 +14,7 @@ function prevMonth() {
         year--;
         month = 11
     }
+    selectedDay = null
     resetMonth((month%12+12)%12);
 
 }
@@ -23,18 +25,30 @@ function nextMonth() {
         year++
         month = 0
     }
+    selectedDay = null
     resetMonth((month%12+12)%12);
 }
 
-function resetMonth(month) {
+function resetMonth() {
     const container = document.querySelector('#calendar_days');
-const create_row = (days, gray, sel) => {
+const create_row = (days, gray, sel, today) => {
   const ele = document.createElement('div');
   ele.classList.add('calendar_row');
   days.forEach((txt, i) => {
     const day = document.createElement('div');
+    if (!gray[i] && parseInt(txt)-1 == today) {
+      day.classList.add('calendar_today');
+    }
+    if (!gray[i] && parseInt(txt)-1 == selectedDay) {
+        day.classList.add('calendar_selected');
+    }
     if (gray[i]) {
       day.classList.add('calendar_grayed');
+    } else {
+      day.addEventListener('click', () => {
+        selectedDay = parseInt(txt)-1
+        resetMonth();
+      });
     }
     day.textContent = txt;
     ele.appendChild(day);
@@ -53,7 +67,7 @@ curMonthEle.textContent = monthNames[month] + ", " + year
 
 /*Init day arrays */
 let days = new Array(35).fill(0);
-let dates = new Array(35).fill(0);
+let dates = new Array(35).fill(null);
 let gray = new Array(35).fill(0);
 
 /*Gather week info from functions */
@@ -87,6 +101,7 @@ for(let i=firstDay; i<days.length; i++) {
         cc = 1
     }
 }
+let today = (year == currentDate.getFullYear() && month == currentDate.getMonth()) ? currentDate.getDate() - 1 : null;
 let count = getDaysOfMonth(year, (month-1+12)%12);
 for(let i=firstDay-1; i>=0; i--){
     days[i] = count--
@@ -95,7 +110,7 @@ for(let i=firstDay-1; i>=0; i--){
 container.innerHTML = ''
 
 for (let i = 0; i < days.length; i += 7) {
-  container.appendChild(create_row(days.slice(i,i+7).map(x=>x.toString()), gray.slice(i,i+7), '23'));
+  container.appendChild(create_row(days.slice(i,i+7).map(x=>x.toString()), gray.slice(i,i+7), selectedDay, today));
 }
 }
 
