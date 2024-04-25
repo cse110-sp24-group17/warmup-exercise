@@ -1,6 +1,23 @@
 
+const currentDate = new Date();
+var month =currentDate.getMonth();
+
 window.addEventListener('load', () => {
-const container = document.querySelector('#calendar_days');
+    resetMonth(month);
+});
+
+function prevMonth() {
+    month--;
+    resetMonth((month%12+12)%12);
+}
+
+function nextMonth() {
+    month++;
+    resetMonth((month%12+12)%12);
+}
+
+function resetMonth(month) {
+    const container = document.querySelector('#calendar_days');
 const create_row = (days, gray, sel) => {
   const ele = document.createElement('div');
   ele.classList.add('calendar_row');
@@ -16,8 +33,6 @@ const create_row = (days, gray, sel) => {
 };
 
 /* Grab proper date information*/
-const currentDate = new Date();
-let month =currentDate.getMonth();
 let year = currentDate.getFullYear();
 
 let monthNames = [
@@ -52,12 +67,12 @@ for(let i=firstDay-1; i>=0; i--){
     days[i] = count--
     gray[i] = 1
 }
+container.innerHTML = ''
 
 for (let i = 0; i < days.length; i += 7) {
   container.appendChild(create_row(days.slice(i,i+7).map(x=>x.toString()), gray.slice(i,i+7), '23'));
 }
-});
-
+}
 
 /*Fucntion to gather week infor from year*/ 
 function firstDaysOfMonth(year) {
