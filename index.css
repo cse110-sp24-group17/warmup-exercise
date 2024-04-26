@@ -128,12 +128,13 @@ main {
 }
 
 .holidays {
-  border: solid orange;
-  padding: 10px 10px;
-  padding-bottom: 100px;
-  border-width: 3px;
-  border-radius: 3px;
-  margin-bottom: 10px;
+  li{
+    border: solid orange;
+    padding: 7px 10px;
+    border-width: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
 }
 
 .event_title {
