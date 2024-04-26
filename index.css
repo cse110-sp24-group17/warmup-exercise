@@ -52,7 +52,6 @@ main {
 }
 
 .add_button {
-  cursor: pointer;
   font-weight: 900;
 }
 
@@ -64,6 +63,7 @@ main {
 }
 
 .button {
+  cursor: pointer;
   width: 2rem;
   height: 2rem;
 }
