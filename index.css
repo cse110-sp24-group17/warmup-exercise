@@ -24,7 +24,7 @@ main {
 }
 
 .heading_bar {
-  background: orange;
+  background: #F3AB3C;
   width: 4px;
   margin-right: 8px;
 }
@@ -126,7 +126,7 @@ main {
 }
 
 .calendar_selected {
-  background: orange; 
+  background: #FBE4B4;
 }
 
   
@@ -143,7 +143,7 @@ main {
 }
 
 .holiday {
-  border: solid orange;
+  border: solid #F3AB3C;
   padding: 7px 10px;
   border-width: 3px;
   border-radius: 3px;
@@ -157,7 +157,7 @@ main {
 }
 
 .holiday_place {
-  color: orange;
+  color: #F3AB3C;
   font-weight: 500;
 }
 
@@ -198,7 +198,7 @@ ul li:before {
   position: absolute;
   width: 27px;
   height: 27px;
-  background: #FFD580;
+  background: #FBE4B4;
   cursor: pointer;
   right: 50%;
 }
@@ -209,7 +209,7 @@ ul li:before {
   transform: translate(-50%, -50%);
   height: 3px;
   width: 70%;
-  background: orange;
+  background: #F3AB3C;
   top: 50%;
   left: 50%;
 }
@@ -220,7 +220,7 @@ ul li:before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: orange;
+  background: #F3AB3C;
   height: 70%;
   width: 3px;
 }
@@ -232,7 +232,7 @@ ul li:before {
 }
 
 .button_plus:hover {
-  background-color: orange;
+  background-color: #F3AB3C;
   transition: 0.2s;
 }
 
