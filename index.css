@@ -142,12 +142,14 @@ main {
   position:relative;
 }
 
-.event {
-  border: solid orange;
-  padding: 10px 10px;
-  border-width: 3px;
-  border-radius: 3px;
-  margin-bottom: 20px;
+.holidays {
+  li{
+    border: solid orange;
+    padding: 7px 10px;
+    border-width: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
 }
 
 .event_title {
