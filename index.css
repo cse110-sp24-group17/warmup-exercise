@@ -142,23 +142,21 @@ main {
   position:relative;
 }
 
-.holidays {
-  li{
-    border: solid orange;
-    padding: 7px 10px;
-    border-width: 3px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
+.holiday {
+  border: solid orange;
+  padding: 7px 10px;
+  border-width: 3px;
+  border-radius: 3px;
+  margin-bottom: 15px;
 }
 
-.event_title {
-  font-size: 1.1rem;
+.holiday_title {
+  font-size: 1.01rem;
   font-weight: 200;
   margin-bottom: 4px;
 }
 
-.event_place {
+.holiday_place {
   color: orange;
   font-weight: 500;
 }
@@ -167,7 +165,11 @@ main {
   font-weight: 100;
 }
 
-.event_time {
+.holiday_list {
+  display: block;
+}
+
+.holiday_time {
   font-weight: 600;
 }
 
@@ -232,4 +234,9 @@ ul li:before {
 .button_plus:hover {
   background-color: orange;
   transition: 0.2s;
+}
+
+.quote {
+  padding: 0 10px;
+  font-style: italic;
 }
