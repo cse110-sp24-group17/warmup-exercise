@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
     };
     const holidaysData = await fetch('Holidays.json').then(response => response.json());
     const quotesData = await fetch('dailyquotes.json').then(response => response.json());
-    const sideview = new SideViewComponent(get('holidays'),get('quotes'),holidaysData,quotesData);
+    const sideview = new SideViewComponent(get('holidays'),get('quotes'),get('cur_date'),holidaysData,quotesData);
     sideview.initialize();
     const onDatePicked = (date) => {
       sideview.switchDate(date);
