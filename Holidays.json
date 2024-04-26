@@ -14,7 +14,7 @@
     "4.23": ["Passover (first day)"],
     "4.24": ["Administrative Professionals Day"],
     "4.25": ["Take our Daughters and Sons to Work Day"],
-    "4.26": ["Arbor Day", "Confederate Memorial Day", "State Holiday"],
+    "4.26": [{"title": "Warm-up Activity", "place": "Sixth Market", "time": "4:00pm - 11:59pm"}, "Arbor Day", "Confederate Memorial Day", "State Holiday"],
     "4.29": ["Arbor Day", "Confederate Memorial Day"],
     "4.30": ["Last Day of Passover"]
   }

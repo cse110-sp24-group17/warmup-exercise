@@ -52,11 +52,19 @@ export default class SideViewComponent {
       li.className = 'holiday'
       const title = document.createElement('div');
       title.className = 'holiday_title';
-      title.innerHTML = holiday + ' <span class="holiday_place">@ UCSD</span>';
+      if (typeof holiday === 'string') {
+        title.innerHTML = holiday + ' <span class="holiday_place">@ Universe</span>';
+      } else {
+        title.innerHTML = holiday.title + ' <span class="holiday_place">@ ' + holiday.place + '</span>';
+      }
       li.appendChild(title);
       const time = document.createElement('div');
       time.className = 'holiday_time';
-      time.textContent = 'whole day';
+      if (typeof holiday === 'string') {
+        time.textContent = 'whole day';
+      } else {
+        time.textContent = holiday.time;
+      }
       li.append(time);
       this.holidaysElement.appendChild(li);
     });
