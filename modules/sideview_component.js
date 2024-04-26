@@ -1,3 +1,4 @@
+import { isSameDay } from "./date_util.js"
 // Convert date to MM.DD
 function convertDateToString(date) {
   return `${(date.getMonth() + 1)}.${date.getDate()}`;
@@ -5,9 +6,10 @@ function convertDateToString(date) {
 
 // SideViewComponent displays the detail of each day
 export default class SideViewComponent {
-  constructor(holidaysElement, quoteElement, holidaysData, quotesData) {
+  constructor(holidaysElement, quoteElement, curDateElement, holidaysData, quotesData) {
     this.holidaysElement = holidaysElement;
     this.quoteElement = quoteElement;
+    this.curDateElement = curDateElement;
     this.holidaysData = holidaysData;
     this.quotesData = quotesData;
   }
@@ -28,6 +30,12 @@ export default class SideViewComponent {
   render() {
     this.displayHoliday(convertDateToString(this.selectedDate));
     this.displayQuote(convertDateToString(this.selectedDate));
+    const dateString = this.selectedDate.toLocaleDateString('en-US');
+    if (isSameDay(this.selectedDate, new Date())) {
+      this.curDateElement.textContent = "Today, " + dateString;
+    } else {
+      this.curDateElement.textContent = dateString;
+    }
   }
 
   // diplay holidays of current selected date
