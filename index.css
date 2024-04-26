@@ -98,6 +98,7 @@ main {
 
 .calendar_weekday {
   display: flex;
+  user-select: none;
   justify-content: space-between;
 }
 .calendar_weekday div {
