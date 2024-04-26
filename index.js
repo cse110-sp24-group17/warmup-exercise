@@ -1,3 +1,25 @@
+import CalendarComponent from "./modules/calendar_component.js";
+import SideViewComponent from "./modules/sideview_component.js";
+
+window.addEventListener('load', () => {
+  (async () => {
+    const get = (id) => {
+      return document.getElementById(id);
+    };
+    const holidaysData = await fetch('Holidays.json').then(response => response.json());
+    const quotesData = await fetch('dailyquotes.json').then(response => response.json());
+    const sideview = new SideViewComponent(get('holidays'),get('quotes'),holidaysData,quotesData);
+    sideview.initialize();
+    const onDatePicked = (date) => {
+      sideview.switchDate(date);
+    };
+    const calendar = new CalendarComponent(get('cur_month'),get('calendar_days'),
+      get('prev_month'),get('next_month'),onDatePicked);
+    calendar.initialize();
+  })();
+});
+
+/*
 function displayHolidayAndQuote(clickDate, holidaysData, quotesData) {
     displayHoliday(clickDate, holidaysData);
     displayQuote(clickDate, quotesData);
@@ -62,3 +84,4 @@ function displayHolidayAndQuote(clickDate, holidaysData, quotesData) {
       });
   });
   
+*/

@@ -1,3 +1,64 @@
+// ****************
+// * Date Utility *
+// ****************
+
+// Returns true if year and month is valid
+function isValidYearMonth(year, month) {
+  return Number.isInteger(year) && Number.isInteger(month) && month >= 0 && month < 12;
+}
+
+// Returns the weekday of first day of specified month 
+// Return value is in integer (i.e. 0 is Monday and so on)
+function weekdayOfFirstDay(year, month) {
+  // validate the input
+    throw new Error('Invalid year or month specified');
+  return new Date(year, month, 1).getDay();
+}
+
+// Convert month index to month name as string
+function monthIndexToString(month) {
+  // validate the input
+  if (!Number.isInteger(month) || month < 0 || month >= 12)
+    throw new Error('Invalid month specified');
+  const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+  return monthNames[month] 
+}
+
+// Returns true if year is leap year
+function isLeapYear(year) {
+  if (Number.isInteger(year))
+    throw new Error('Invalid year specified');
+  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+  
+// Returns the number of days of specified month
+function getDaysOfMonth(year, month) {
+  const daysInMonths = [
+    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+  ];
+    if (isLeapYear(year) && month == 1) {
+        return 29;
+    }
+    return daysInMonths[month];
+}
+
+
+const curMonthEle = document.querySelector('#cur_month');
+curMonthEle.textContent = monthNames[month] + ", " + year
+
+/*Init day arrays */
+let days = new Array(35).fill(0);
+let dates = new Array(35).fill(null);
+let gray = new Array(35).fill(0);
+
+/*Gather week info from functions */
+let tuples = firstDaysOfMonth(year)
+let firstDay = tuples[month].dayOfWeek
+
+
 
 const currentDate = new Date();
 var month = currentDate.getMonth();
@@ -57,39 +118,8 @@ const create_row = (days, gray, sel, today) => {
 };
 
 /* Grab proper date information*/
-let monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-  
-const curMonthEle = document.querySelector('#cur_month');
-curMonthEle.textContent = monthNames[month] + ", " + year
-
-/*Init day arrays */
-let days = new Array(35).fill(0);
-let dates = new Array(35).fill(null);
-let gray = new Array(35).fill(0);
-
-/*Gather week info from functions */
-let tuples = firstDaysOfMonth(year)
-let firstDay = tuples[month].dayOfWeek
-
-const daysInMonths = [
-    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-  ];
-
-function isLeapYear(year) {
-    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-}
-
-function getDaysOfMonth(year, month) {
-    if (isLeapYear(year) && month == 1) {
-        return 29;
-    }
-    return daysInMonths[month];
-}
-
 /* Update current month*/
+
 let counter = 1
 let cc = 0
 for(let i=firstDay; i<days.length; i++) {
@@ -113,17 +143,3 @@ for (let i = 0; i < days.length; i += 7) {
   container.appendChild(create_row(days.slice(i,i+7).map(x=>x.toString()), gray.slice(i,i+7), selectedDay, today));
 }
 }
-
-/*Fucntion to gather week infor from year*/ 
-function firstDaysOfMonth(year) {
-    const firstDays = [];
-  
-    for (let month = 0; month < 12; month++) {
-      const firstDayOfMonth = new Date(year, month, 1);
-      const dayOfWeek = firstDayOfMonth.getDay();
-      firstDays.push({ date: firstDayOfMonth, dayOfWeek: dayOfWeek });
-    }
-  
-    return firstDays;
-  }
-  
