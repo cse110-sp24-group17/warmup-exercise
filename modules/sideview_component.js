@@ -45,6 +45,7 @@ export default class SideViewComponent {
   
     // Get holiday names for the input date
     const matchedHolidays = this.holidaysData[inputDate] || [];
+    matchedHolidays.push({"title": "Daily Exercise", "place": "Geisei Library", "time": "9:00am - 10:00am"});
   
     // Display matched holidays
     matchedHolidays.forEach(holiday => {
