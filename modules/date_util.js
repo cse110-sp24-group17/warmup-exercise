@@ -45,7 +45,7 @@ export function getDaysOfMonth(year, month) {
 
 // Compare dates only year, month, and day
 export function isSameDay(lhs, rhs) {
-  return lhs.getDate() === rhs.getDate() && 
+  return lhs.getDay() === rhs.getDate() && 
     lhs.getFullYear() === rhs.getFullYear() && 
     lhs.getMonth() === rhs.getMonth();
 }
